@@ -4,14 +4,30 @@ public class Cycle {
 	 * initializing variables for constructor class Cycle, and making the variables
 	 * private so they cannot be called in other classes normally
 	 */
-private int NumberOfWheels = 100, weight = 1000;
+private int NumberOfWheels, weight;
 
-public Cycle(int NumberOfWheels1, int weight1){
-	this.NumberOfWheels = NumberOfWheels1;
-	this.weight = weight1;
+public Cycle(){
+	this(100,1000);
+	
+	/**
+	 * this method will give default values to the numberofwheels and weight
+	 */
 }
+
+public Cycle(int NumberOfWheels, int weight){
+	this.NumberOfWheels = NumberOfWheels;
+	this.weight= weight;
+	/**
+	 * the this values here will set the private variables equal to the parameters of the constructor
+	 */
+}
+
+
 	public String toString(){
 		return " i have " + NumberOfWheels + " wheels and they are " + weight + " pounds each";
 	}
+	/**
+	 * the toString here will showcase the results of the constructor 
+	 */
 }
 
