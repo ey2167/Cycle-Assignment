@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 
@@ -20,19 +23,28 @@ public Cycle(){
 
 public Cycle(double NumberOfWheels, double weight){
 	try{
+		String filename = "Cycle.txt";
+		
 	System.out.println("type number of wheels here");
 	NumberOfWheels= keyboard.nextDouble();
 	System.out.println("type weight here");
 	weight = keyboard.nextDouble();
 	this.NumberOfWheels = NumberOfWheels;
 	this.weight= weight;
+	
+	
+		PrintWriter pw = new PrintWriter(new FileWriter("Cycle.txt"));
+		pw.println(NumberOfWheels);
+		pw.println(weight);
+		pw.close();
+	
 	}
 	catch(Exception e){
 		System.out.println("invalid input, closing");
 		System.exit(0);
 	}
 	if(weight<0 || NumberOfWheels<0){
-		throw new IllegalArgumentException("no negative weight, closing");
+		throw new IllegalArgumentException("no negative number of wheels or weight, closing");
 		
 			
 		
@@ -46,6 +58,7 @@ public Cycle(double NumberOfWheels, double weight){
 	public String toString(){
 		return " i have " + NumberOfWheels + " wheels and they are " + weight + " pounds each";
 	}
+	
 	/**
 	 * the toString here will showcase the results of the constructor 
 	 */
